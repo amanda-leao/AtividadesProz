@@ -1,0 +1,55 @@
+# =====================================================================
+# Atividade: Calculadora Interativa com Menu
+# =====================================================================
+
+def calculadora_interativa():
+    while True:
+        # Exibe a lista de operações no início de cada ciclo
+        print("\n--- LISTA DE OPERAÇÕES ---")
+        print("1: Soma")
+        print("2: Subtração")
+        print("3: Multiplicação")
+        print("4: Divisão")
+        print("0: Sair")
+        
+        # Recebe a opção escolhida pelo usuário
+        opcao = input("\nDigite o número para a operação correspondente: ")
+        
+        # Se o usuário escolher a opção de sair
+        if opcao == "0":
+            print("Saindo do programa. Até logo!")
+            break
+            
+        # Se for uma opção válida (de 1 a 4), solicita os números e calcula
+        elif opcao in ["1", "2", "3", "4"]:
+            try:
+                # Pede para o usuário inserir o primeiro e o segundo valor
+                num1 = float(input("Digite o primeiro valor: "))
+                num2 = float(input("Digite o segundo valor: "))
+                
+                # Executa a operação correspondente
+                if opcao == "1":
+                    resultado = num1 + num2
+                    print(f"\nResultado da Soma: {resultado}")
+                elif opcao == "2":
+                    resultado = num1 - num2
+                    print(f"\nResultado da Subtração: {resultado}")
+                elif opcao == "3":
+                    resultado = num1 * num2
+                    print(f"\nResultado da Multiplicação: {resultado}")
+                elif opcao == "4":
+                    # Evita o erro de divisão por zero
+                    if num2 != 0:
+                        resultado = num1 / num2
+                        print(f"\nResultado da Divisão: {resultado}")
+                    else:
+                        print("\nErro: Não é possível dividir por zero!")
+            except ValueError:
+                print("\nErro: Por favor, digite apenas números válidos para os cálculos.")
+                
+        # Caso o usuário introduza qualquer outra opção inválida
+        else:
+            print("\nEssa opção não existe")
+
+# Executa o programa
+calculadora_interativa()
