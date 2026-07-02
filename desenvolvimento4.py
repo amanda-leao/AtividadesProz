@@ -1,6 +1,3 @@
-# =====================================================================
-# Atividade: Função Calculadora de Dois Números
-# =====================================================================
 
 def calculadora(num1, num2, operacao):
     if operacao == 1:
@@ -10,12 +7,11 @@ def calculadora(num1, num2, operacao):
     elif operacao == 3:
         return num1 * num2
     elif operacao == 4:
-        # Tratamento básico para evitar divisão por zero
         if num2 != 0:
             return num1 / num2
         else:
             print("Erro: Divisão por zero!")
             return 0
     else:
-        # Caso seja inserido um número de operação que não exista
+    
         return 0

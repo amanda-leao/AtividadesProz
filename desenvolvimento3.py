@@ -1,12 +1,7 @@
-# =====================================================================
-# Solução da atividade: Hotel de 20 andares sem o 13º andar
-# =====================================================================
-
 print("=== OPÇÃO 1: Utilizando o laço FOR (Crescente) ===")
-# O range(1, 21) gera números de 1 até 20
 for andar in range(1, 21):
     if andar == 13:
-        continue  # Pula o restante do bloco se for o andar 13
+        continue  
     print(f"{andar}º andar")
 
 print("\n" + "="*50 + "\n")
@@ -16,12 +11,11 @@ andar = 1
 while andar <= 20:
     if andar != 13:
         print(f"{andar}º andar")
-    andar += 1  # Incrementa o contador para evitar loop infinito
+    andar += 1  
 
 print("\n" + "="*50 + "\n")
 
 print("=== OPÇÃO 3: DESAFIO - Ordem Decrescente ===")
-# O range(20, 0, -1) começa no 20, vai até o 1 e subtrai 1 a cada passo
 for andar in range(20, 0, -1):
     if andar == 13:
         continue

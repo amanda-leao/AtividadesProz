@@ -1,35 +1,24 @@
-# =====================================================================
-# Atividade: Validação de Ano de Nascimento e Idade
-# =====================================================================
-
 def cadastrar_usuario():
-    # Recebe o nome completo do usuário
     nome_completo = input("Digite seu nome completo: ")
 
-    # Laço de repetição para validar o ano de nascimento
     while True:
         try:
             ano_nascimento = int(input("Digite seu ano de nascimento (entre 1922 e 2021): "))
             
-            # Verifica se o ano está dentro do intervalo permitido pelas instruções
             if 1922 <= ano_nascimento <= 2021:
-                break  # Sai do laço se o valor estiver correto
+                break  
             else:
                 print("Erro: O ano deve ser um valor válido entre 1922 e 2021. Tente novamente.")
                 
         except ValueError:
-            # Captura o erro caso o usuário não digite um número inteiro
             print("Erro: Entrada inválida. Por favor, digite um número inteiro correspondente ao ano.")
 
-    # Calcula a idade baseada no ano atual estipulado no projeto (2022)
     ano_atual = 2022
     idade = ano_atual - ano_nascimento
 
-    # Exibe o resultado final na tela
     print("\n" + "="*40)
     print(f"Nome do usuário: {nome_completo}")
     print(f"Idade completada (ou a completar) em {ano_atual}: {idade} anos")
     print("="*40)
 
-# Executa o programa
 cadastrar_usuario()
